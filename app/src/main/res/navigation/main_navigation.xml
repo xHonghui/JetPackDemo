@@ -6,14 +6,8 @@
     app:startDestination="@+id/main"
     tools:ignore="UnusedNavigation">
 
-    <fragment
-        android:id="@+id/detail"
-        android:name="com.xhh.jetpackdemo.detail.DetailFragment"
-        android:label="DetailFragment">
-        <action
-            android:id="@+id/action_detail_to_user2"
-            app:destination="@id/user" />
-    </fragment>
+    <!-- 表示第一个fragment -->
+    <!-- app:startDestination="@+id/main" -->
 
     <fragment
         android:id="@+id/main"
@@ -26,6 +20,16 @@
             android:id="@+id/action_main_to_user"
             app:destination="@id/user" />
     </fragment>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.xhh.jetpackdemo.detail.DetailFragment"
+        android:label="DetailFragment">
+        <action
+            android:id="@+id/action_detail_to_user2"
+            app:destination="@id/user" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/user"
