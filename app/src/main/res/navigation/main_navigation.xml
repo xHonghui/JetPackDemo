@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/main"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.xhh.jetpackdemo.detail.DetailFragment"
+        android:label="DetailFragment">
+        <action
+            android:id="@+id/action_detail_to_user2"
+            app:destination="@id/user" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.xhh.jetpackdemo.main.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_main_to_detail2"
+            app:destination="@id/detail" />
+        <action
+            android:id="@+id/action_main_to_user"
+            app:destination="@id/user" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/user"
+        android:name="com.xhh.jetpackdemo.user.UserFragment"
+        android:label="UserFragment">
+        <action
+            android:id="@+id/action_user_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_main_to_detail"
+        app:destination="@+id/detail" />
+
+    <action
+        android:id="@+id/action_main_user"
+        app:destination="@+id/user" />
+
+    <action
+        android:id="@+id/action_detail_to_user"
+        app:destination="@+id/user" />
+
+</navigation>
