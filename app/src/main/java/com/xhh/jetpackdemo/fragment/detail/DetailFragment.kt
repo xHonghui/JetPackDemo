@@ -1,10 +1,10 @@
-package com.xhh.jetpackdemo.detail
+package com.xhh.jetpackdemo.fragment.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xhh.jetpackdemo.BaseFragment
+import com.xhh.jetpackdemo.fragment.main.BaseFragment
 import com.xhh.jetpackdemo.R
 import kotlinx.android.synthetic.main.fragment_detail.*
 

@@ -1,12 +1,13 @@
-package com.xhh.jetpackdemo.main
+package com.xhh.jetpackdemo.fragment.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.xhh.jetpackdemo.BaseFragment
 import com.xhh.jetpackdemo.R
+import com.xhh.jetpackdemo.activity.SearchActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment() {
@@ -30,6 +31,7 @@ class MainFragment : BaseFragment() {
         }
         btn3.setOnClickListener {
             Toast.makeText(context, "btn3", Toast.LENGTH_LONG).show()
+            startActivity(Intent(context, SearchActivity::class.java))
         }
     }
 

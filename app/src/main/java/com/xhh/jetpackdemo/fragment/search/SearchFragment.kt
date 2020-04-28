@@ -1,28 +1,28 @@
-package com.xhh.jetpackdemo.user
+package com.xhh.jetpackdemo.fragment.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xhh.jetpackdemo.BaseFragment
 import com.xhh.jetpackdemo.R
-import kotlinx.android.synthetic.main.fragment_user.*
+import com.xhh.jetpackdemo.fragment.main.BaseFragment
+import kotlinx.android.synthetic.main.fragment_search.*
 
-class UserFragment : BaseFragment() {
+class SearchFragment:BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        return return inflater.inflate(R.layout.fragment_user, container, false)
+        return inflater.inflate(R.layout.fragment_search,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn1.setOnClickListener {
-            navigate(R.id.action_user_to_detail)
+        btn_search.setOnClickListener {
+            navigate(R.id.action_search_to_search_result)
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package com.xhh.jetpackdemo
+package com.xhh.jetpackdemo.fragment.main
 
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import com.xhh.jetpackdemo.R
 
 open class BaseFragment:Fragment() {
 
