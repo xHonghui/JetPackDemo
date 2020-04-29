@@ -21,9 +21,6 @@ class DetailFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn1.setOnClickListener {
-            navigate(R.id.action_detail_to_user2)
-        }
     }
 
 

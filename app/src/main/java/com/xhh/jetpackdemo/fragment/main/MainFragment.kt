@@ -5,12 +5,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.xhh.jetpackdemo.R
 import com.xhh.jetpackdemo.activity.SearchActivity
-import kotlinx.android.synthetic.main.fragment_main.*
+import com.xhh.jetpackdemo.databinding.FragmentMainBinding
+import com.xhh.jetpackdemo.model.MainModel
 
 class MainFragment : BaseFragment() {
+
+    //entrance
+    val toUserPage: Int = 1
+    val toDetailPage: Int = 2
+    val toSearchPage: Int = 3
+
+    //user type
+    val normalUser: Int = 1
+    val vipUser: Int = 2
+
+    val mainModel: MainModel by lazy { MainModel() }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,16 +35,31 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn1.setOnClickListener {
-            navigate(R.id.action_main_to_user)
+        val binding = FragmentMainBinding.bind(view)
+        binding.userEntrance = toUserPage
+        binding.detailEntrance = toDetailPage
+        binding.searchEntrance = toSearchPage
+        binding.normalUserType = normalUser
+        binding.vipUserType = vipUser
+        binding.delegate = ActionDelegate()
+    }
+
+    inner class ActionDelegate {
+
+        fun toNextPage(entrance: Int) {
+            when (entrance) {
+                toUserPage -> {
+                    navigate(R.id.action_main_to_user)
+                }
+                toDetailPage -> {
+                    navigate(R.id.action_main_to_detail2)
+                }
+                toSearchPage -> {
+                    startActivity(Intent(context, SearchActivity::class.java))
+                }
+            }
         }
-        btn2.setOnClickListener {
-            navigate(R.id.action_main_to_detail2)
-        }
-        btn3.setOnClickListener {
-            Toast.makeText(context, "btn3", Toast.LENGTH_LONG).show()
-            startActivity(Intent(context, SearchActivity::class.java))
-        }
+
     }
 
 
