@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import com.xhh.jetpackdemo.AppViewModelProvider
 import com.xhh.jetpackdemo.fragment.main.BaseFragment
 import com.xhh.jetpackdemo.R
+import com.xhh.jetpackdemo.model.MainModel
 
 class UserFragment : BaseFragment() {
 
@@ -20,5 +23,8 @@ class UserFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val model = activity?.run {
+            AppViewModelProvider.getInstance().get(MainModel::class.java)
+        }
     }
 }
