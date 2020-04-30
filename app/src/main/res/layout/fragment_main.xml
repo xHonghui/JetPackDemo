@@ -5,6 +5,10 @@
     <data>
 
         <variable
+            name="content"
+            type="androidx.lifecycle.MutableLiveData" />
+
+        <variable
             name="userEntrance"
             type="int" />
 
@@ -68,8 +72,25 @@
                     android:onClick="@{()->delegate.toNextPage(searchEntrance)}"
                     android:text="go to 3" />
 
+                <Button
+                    android:id="@+id/btn_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->delegate.refresh()}"
+                    android:text="刷新数据" />
+
             </LinearLayout>
 
+            <!--  android:text="@{String.valueOf(content)}" -->
+            <!-- 绑定文本数据为 MultableLiveData 的值，这样可以通过更改 LiveData 的 value 值来更改文本 -->
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:text="@{String.valueOf(content)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
